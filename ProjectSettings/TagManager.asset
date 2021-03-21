@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - bomb
+  - point
+  - collector
+  - player
+  - destroy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - BG
+  - BG2
+  - Game
+  - FG
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BGBG
+    uniqueID: 1500293715
+    locked: 0
+  - name: BG
+    uniqueID: 3112601971
+    locked: 0
+  - name: BG2
+    uniqueID: 2490808293
+    locked: 0
+  - name: Game
+    uniqueID: 554498023
+    locked: 0
+  - name: points
+    uniqueID: 951079423
+    locked: 0
+  - name: FG
+    uniqueID: 3104398497
+    locked: 0
+  - name: canvas
+    uniqueID: 2467202329
+    locked: 0
+  - name: canvasimg
+    uniqueID: 3602128131
+    locked: 0
