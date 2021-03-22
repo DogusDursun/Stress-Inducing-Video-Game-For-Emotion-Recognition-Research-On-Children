@@ -19,8 +19,16 @@ public class BalloonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject spacebutton = GameObject.Find("Button");
         if (transform.position.y > 3f || transform.position.y < -4f)
         {
+            if (transform.position.y < -4f)
+            {
+                spacebutton.transform.position = new Vector2(4.8f, -2.5f);
+            } else if (transform.position.y > 3f)
+            {
+                spacebutton.transform.position = new Vector2(0,500f);
+            }
             animator.SetInteger("balcolor", 1);
         } else 
         {
