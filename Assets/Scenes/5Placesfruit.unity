@@ -6238,6 +6238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22734557020a3214e9fe9d439de32f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   speed: 1
   is_itdead: 0
   check_dead: 0
@@ -7792,7 +7793,6 @@ GameObject:
   - component: {fileID: 2117976979}
   - component: {fileID: 2117976978}
   - component: {fileID: 2117976977}
-  - component: {fileID: 2117976976}
   m_Layer: 10
   m_Name: player
   m_TagString: Untagged
@@ -7800,21 +7800,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2117976976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2117976975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22734557020a3214e9fe9d439de32f86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  is_itdead: 0
-  check_dead: 0
 --- !u!114 &2117976977
 MonoBehaviour:
   m_ObjectHideFlags: 0

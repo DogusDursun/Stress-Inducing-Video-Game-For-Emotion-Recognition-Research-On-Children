@@ -26,7 +26,7 @@ public class Collector : MonoBehaviour
             drop_counter++;
             if (drop_counter == 10)
             {
-                GameObject puhlayer = GameObject.Find("pepper");
+               // GameObject puhlayer = GameObject.Find("pepper");
                // puhlayer.transform.position = new Vector2(0, 100);
                 // target.gameObject.SetActive(false);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));

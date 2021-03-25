@@ -64,13 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BalloonMovement.cs" />
+    <Compile Include="Assets\Scripts\BugScore.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
+    <Compile Include="Assets\Scripts\Endscore.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\PlayerBounds.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement2.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement3.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\ScoreSaver.cs" />
     <Compile Include="Assets\Scripts\Spawner1.cs" />
     <Compile Include="Assets\Scripts\Spawner2.cs" />
     <Compile Include="Assets\Scripts\Spawner3.cs" />

@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/relaxation.unity
     guid: 5f927d49df62c42468bcaed1ae73134a
+  - enabled: 1
+    path: Assets/Scenes/finishScene.unity
+    guid: fe7d33049a456d14dbe96b36ac1da948
   m_configObjects: {}

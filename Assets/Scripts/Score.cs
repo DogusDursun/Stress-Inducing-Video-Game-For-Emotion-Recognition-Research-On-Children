@@ -8,14 +8,17 @@ public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
     private Text Text;
-    private int score = 0;
+    public float score = 0f;
     public float speed = 1f;
     public bool is_itdead = false;
     public bool check_dead = false;
     void Awake()
     {
         Text = GameObject.Find("Text").GetComponent<Text> ();
-        Text.text = "000";
+        GameObject score_to_save = GameObject.Find("scoreobject");
+        ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
+        score = score_saved.saved_score;
+        Text.text = score.ToString();
     }
 
     // Update is called once per frame
@@ -41,6 +44,9 @@ public class Score : MonoBehaviour
                 StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                 score += 500;
                 Text.text = score.ToString();
+                GameObject score_to_save = GameObject.Find("scoreobject");
+                ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
+                score_saved.saved_score = score;
                 GameObject fruit__speed2 = GameObject.Find("fruitspeedholder");
                 fruitspeed fruit_move = fruit__speed2.GetComponent<fruitspeed>();
                 fruit_move.fruit_start_speed += 0.05f;

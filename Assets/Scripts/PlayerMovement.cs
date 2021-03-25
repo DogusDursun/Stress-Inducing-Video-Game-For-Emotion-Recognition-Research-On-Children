@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject collector_found = GameObject.Find("Collector");
         Collector collector_script = collector_found.GetComponent<Collector>();
-        Score score_script = gameObject.GetComponent<Score>();
+        BugScore score_script = gameObject.GetComponent<BugScore>();
         is_dead = collector_script.is_it_dead || score_script.is_itdead;
         if (!is_dead)
         {

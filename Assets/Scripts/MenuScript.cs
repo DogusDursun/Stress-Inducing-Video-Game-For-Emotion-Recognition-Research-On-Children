@@ -15,4 +15,9 @@ public class MenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SetFullscreen (bool is_fs)
+    {
+        Screen.fullScreen = is_fs;
+    }
 }

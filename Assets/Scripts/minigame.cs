@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class minigame : MonoBehaviour
 {
@@ -14,11 +15,34 @@ public class minigame : MonoBehaviour
     private float first_flag = 1f;
     private float second_flag = 1f;
     private float third_flag = 1f;
+    private float game_time = 60f;
+    private float time_passed = 0f;
+    public Slider time_bar;
+    private bool stopper = false;
     // Start is called before the first frame update
-
+    void Awake()
+    {
+        GameObject time_slider = GameObject.Find("Slider");
+        time_bar = time_slider.GetComponent<Slider>();
+    }
+    private void Start()
+    {
+        time_bar.maxValue = game_time;
+        time_bar.value = game_time;
+    }
     // Update is called once per frame
     void Update()
     {
+        time_passed += Time.deltaTime;
+        if (!stopper)
+        {
+            time_bar.value = game_time - time_passed;
+        }
+        if (time_passed >= game_time)
+        {
+            stopper = true;
+            StartCoroutine(RestartGame());
+        }
         GameObject first = GameObject.Find("player1");
         GameObject second = GameObject.Find("player2");
         GameObject third = GameObject.Find("player3");

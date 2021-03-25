@@ -1,24 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BalloonMovement : MonoBehaviour
 {
-    public float up_speed = 2f;
-    public float down_speed = -3f;
+    public float up_speed = 2.20f;
+    public float down_speed = -2.75f;
     public float ceiling = 3.66f;
     public float ground = -4.62f;
     private Rigidbody2D myBalloon;
     public Animator animator;
+    private float game_time = 60f;
+    private float time_passed = 0f;
+    public Slider time_bar;
+    private bool stopper = false;
     // Start is called before the first frame update
     void Awake()
     {
+        GameObject time_slider = GameObject.Find("Slider");
+        time_bar = time_slider.GetComponent<Slider>();
         myBalloon = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        time_bar.maxValue = game_time;
+        time_bar.value = game_time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        time_passed += Time.deltaTime;
+        if (!stopper)
+        {
+            time_bar.value = game_time - time_passed;
+        }
+        if (time_passed >= game_time)
+        {
+            stopper = true;
+            StartCoroutine(RestartGame());
+        }
         GameObject spacebutton = GameObject.Find("Button");
         if (transform.position.y > 3f || transform.position.y < -4f)
         {
@@ -60,5 +84,10 @@ public class BalloonMovement : MonoBehaviour
                 myBalloon.velocity = vel;
             }
         }
+    }
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSecondsRealtime(0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
