@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myBody;
     public bool is_dead = false;
     public bool height_passed = false;
+    public bool bug_time = false;
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
@@ -21,11 +22,23 @@ public class PlayerMovement : MonoBehaviour
         Collector collector_script = collector_found.GetComponent<Collector>();
         BugScore score_script = gameObject.GetComponent<BugScore>();
         is_dead = collector_script.is_it_dead || score_script.is_itdead;
+        if (collector_script.drop_counter >= 6)
+        {
+            bug_time = true;
+        }
         if (!is_dead)
         {
-            Vector2 vel = myBody.velocity;
-            vel.x = Input.GetAxis("Horizontal") * speed;
-            myBody.velocity = vel;
+            if (!bug_time)
+            {
+                Vector2 vel = myBody.velocity;
+                vel.x = Input.GetAxis("Horizontal") * speed;
+                myBody.velocity = vel;
+            } else
+            {
+                Vector2 vel = myBody.velocity;
+                vel.x = Input.GetAxis("Horizontal") * speed * -1f;
+                myBody.velocity = vel;
+            }
         } else
         {
             Vector2 vel = myBody.velocity;

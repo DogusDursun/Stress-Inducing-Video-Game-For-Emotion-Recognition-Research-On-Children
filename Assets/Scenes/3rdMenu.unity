@@ -826,7 +826,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -249.99995, y: -164.9}
+  m_AnchoredPosition: {x: -249.99997, y: -164.9}
   m_SizeDelta: {x: -636.30597, y: -388.42206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982635756
@@ -1171,13 +1171,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Oyuncu yaln\u0131zca sol ve sa\u011F ok tu\u015Flar\u0131n\u0131 kullanarak
-    karakterini kontrol edebilir\r\n\r\n- Yere d\xFC\u015Fen her puan ile birlikte
-    oyuncu can puanlar\u0131ndan birini kaybeder\r\n\r\n- Kurba\u011Fa toplamak oyunu
-    an\u0131nda sonland\u0131r\u0131r\r\n\n- Puan toplamak oyuncunun skorunu y\xFCkseltir\n\r\nOyuncu
-    m\xFCmk\xFCn oldu\u011Funca fazla puan toplamal\u0131 ve ayn\u0131 zamanda d\xFC\u015Fen
-    t\xFCm kurba\u011Falardan ka\xE7\u0131nmal\u0131d\u0131r. \r\n\r\nOyun, oyuncu
-    haz\u0131r oldu\u011Fu zaman \"Oyuna Ba\u015Fla\" butonuna t\u0131klayarak ba\u015Flat\u0131labilir."
+  m_text: "- Hareket etmek i\xE7in ok tu\u015Flar\u0131n\u0131 kullan\n\n- Yukar\u0131dan
+    d\xFC\u015Fen puanlar\u0131 topla\n\n- Kurba\u011Falardan ka\xE7\n\nM\xFCmk\xFCn
+    oldu\u011Funca fazla puan toplamal\u0131 ve kurba\u011Falardan ka\xE7mal\u0131s\u0131n
+    \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1807,8 +1804,8 @@ Canvas:
   m_GameObject: {fileID: 1698568354}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1927917442}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1

@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: 125}
+  m_AnchoredPosition: {x: 0.00011271, y: 125}
   m_SizeDelta: {x: 246.54208, y: 92.57651}
   m_Pivot: {x: 0.50000006, y: 0.50000036}
 --- !u!114 &13542161
@@ -1370,7 +1370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.1, y: -0.0000038147}
+  m_AnchoredPosition: {x: 17.099998, y: -0.0000038146973}
   m_SizeDelta: {x: 68.0289, y: 72.57651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &578634816
@@ -2005,7 +2005,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 17.1, y: -0.0000038147}
+  m_AnchoredPosition: {x: 17.099998, y: -0.0000038146973}
   m_SizeDelta: {x: 68.0289, y: 72.57651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &692202495
@@ -2575,7 +2575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -253, y: -173.9}
+  m_AnchoredPosition: {x: -252.99997, y: -173.9}
   m_SizeDelta: {x: -636.30597, y: -388.42206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851042854
@@ -3148,8 +3148,8 @@ Canvas:
   m_GameObject: {fileID: 1167427317}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 534864395}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3928,7 +3928,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0022125244}
   m_SizeDelta: {x: -467.12143, y: -292.86148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442730595
@@ -3950,13 +3950,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Oyuncu yaln\u0131zca sol ve sa\u011F ok tu\u015Flar\u0131n\u0131 kullanarak
-    karakterini kontrol edebilir\n\n- Yere d\xFC\u015Fen her puan ile birlikte oyuncu
-    can puanlar\u0131ndan birini kaybeder\n\n- Kurba\u011Fa toplamak oyunu an\u0131nda
-    sonland\u0131r\u0131r\n\n- Puan toplamak oyuncunun skorunu y\xFCkseltir\n\nOyuncu
-    m\xFCmk\xFCn oldu\u011Funca fazla puan toplamal\u0131 ve ayn\u0131 zamanda d\xFC\u015Fen
-    t\xFCm kurba\u011Falardan ka\xE7\u0131nmal\u0131d\u0131r. \n\nOyun, oyuncu haz\u0131r
-    oldu\u011Fu zaman \"Oyuna Ba\u015Fla\" butonuna t\u0131klayarak ba\u015Flat\u0131labilir."
+  m_text: "- Hareket etmek i\xE7in ok tu\u015Flar\u0131n\u0131 kullan\n\n- Yukar\u0131dan
+    d\xFC\u015Fen puanlar\u0131 topla\n\n- Kurba\u011Falardan ka\xE7\n\nM\xFCmk\xFCn
+    oldu\u011Funca fazla puan toplamal\u0131 ve kurba\u011Falardan ka\xE7mal\u0131s\u0131n
+    \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
