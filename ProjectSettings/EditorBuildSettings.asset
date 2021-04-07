@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/5Placesfruit.unity
     guid: 9ec83c6afcd86d24395da6337e8908a9
   - enabled: 1
+    path: Assets/Scenes/camera.unity
+    guid: 14e2a5c52fa632d43bd199613a6f821e
+  - enabled: 1
     path: Assets/Scenes/4thMenu.unity
     guid: 0500a72910109284fb6a07fa44338b97
   - enabled: 1

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BalloonMovement.cs" />
     <Compile Include="Assets\Scripts\BugScore.cs" />
+    <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
     <Compile Include="Assets\Scripts\Endscore.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
