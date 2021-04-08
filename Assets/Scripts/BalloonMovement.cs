@@ -26,6 +26,8 @@ public class BalloonMovement : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(System.DateTime.Now);
+        Debug.Log("RELAXATION PHASE BEGAN");
         time_bar.maxValue = game_time;
         time_bar.value = game_time;
     }
@@ -38,8 +40,10 @@ public class BalloonMovement : MonoBehaviour
         {
             time_bar.value = game_time - time_passed;
         }
-        if (time_passed >= game_time)
+        if ((time_passed >= game_time) && !stopper)
         {
+            Debug.Log(System.DateTime.Now);
+            Debug.Log("RELAXATION PHASE ENDED");
             stopper = true;
             StartCoroutine(RestartGame());
         }

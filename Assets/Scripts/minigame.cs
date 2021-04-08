@@ -27,6 +27,8 @@ public class minigame : MonoBehaviour
     }
     private void Start()
     {
+        Debug.Log(System.DateTime.Now);
+        Debug.Log("SLIDER MINIGAME BEGAN");
         time_bar.maxValue = game_time;
         time_bar.value = game_time;
     }
@@ -38,9 +40,11 @@ public class minigame : MonoBehaviour
         {
             time_bar.value = game_time - time_passed;
         }
-        if (time_passed >= game_time)
+        if ((time_passed >= game_time) && !stopper)
         {
             stopper = true;
+            Debug.Log(System.DateTime.Now);
+            Debug.Log("SLIDER MINIGAME LOST BY TIMEOUT");
             StartCoroutine(RestartGame());
         }
         GameObject first = GameObject.Find("player1");
@@ -60,10 +64,14 @@ public class minigame : MonoBehaviour
             {
                 if (first.transform.position.x >= 2.856f && first.transform.position.x <= 4.776f)
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Successful stop on the grass");
                     first_won = true;
                     first_flag = 1f;
                 } else
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Failed streak");
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     first_flag = 1f;
                 }
@@ -83,11 +91,15 @@ public class minigame : MonoBehaviour
             {
                 if (second.transform.position.x >= -4.803f && second.transform.position.x <= -3.523f)
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Successful stop on the grass");
                     second_won = true;
                     second_flag = 1f;
                 }
                 else
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Failed streak");
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     second.transform.position = new Vector3(-7.5f, 0.713f, 0);
                     second_flag = 1f;
@@ -109,11 +121,17 @@ public class minigame : MonoBehaviour
             {
                 if (third.transform.position.x >= 0.465f && third.transform.position.x <= 0.785f)
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Successful stop on the grass");
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("SLIDER MINIGAME WON");
                     game_won = true;
                     third_flag = 1f;
                 }
                 else
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Failed streak");
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     second.transform.position = new Vector3(-7.5f, 0.713f, 0);
                     third.transform.position = new Vector3(-7.5f, -2.28f, 0);

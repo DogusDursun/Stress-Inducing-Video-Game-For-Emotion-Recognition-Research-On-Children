@@ -30,6 +30,8 @@ public class Score : MonoBehaviour
         {
             if (target.tag == "bomb")
             {
+                Debug.Log(System.DateTime.Now);
+                Debug.Log("PLAYER HAS LOST BY COLLECTING A BOMB");
                 target.tag = "destroy";
                 //transform.position = new Vector2(0, 100);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
@@ -44,6 +46,8 @@ public class Score : MonoBehaviour
                 StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                 score += 500;
                 Text.text = score.ToString();
+                Debug.Log(System.DateTime.Now);
+                Debug.Log("Successfully collected point. Total point: " + score);
                 GameObject score_to_save = GameObject.Find("scoreobject");
                 ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
                 score_saved.saved_score = score;

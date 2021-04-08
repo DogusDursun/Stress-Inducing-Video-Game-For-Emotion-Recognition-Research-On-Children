@@ -28,14 +28,19 @@ public class BugScore : MonoBehaviour
         GameObject collectorfound = GameObject.Find("Collector");
         Collector collectorscript = collectorfound.GetComponent<Collector>();
         check_dead = collectorscript.is_it_dead;
-        if (collectorscript.drop_counter >= 6)
+        if ((collectorscript.drop_counter >= 6) && (!bug_time))
         {
+            /*Debug.Log(System.DateTime.Now);
+            Debug.Log("ENTERED INTO BUG MODE");*/
             bug_time = true;
         }
         if (!is_itdead && !check_dead)
         {
             if (target.tag == "bomb")
             {
+                target.tag = "destroy";
+                Debug.Log(System.DateTime.Now);
+                Debug.Log("PLAYER HAS LOST BY COLLECTING A BOMB");
                 target.tag = "destroy";
                 //transform.position = new Vector2(0, 100);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
@@ -51,6 +56,8 @@ public class BugScore : MonoBehaviour
                 {
                     StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                     score += 500;
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("Successfully collected point. Total point: " + score);
                     Text.text = score.ToString();
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
@@ -60,6 +67,8 @@ public class BugScore : MonoBehaviour
                     fruit_move.fruit_start_speed += 0.05f;
                 } else
                 {
+                    Debug.Log(System.DateTime.Now);
+                    Debug.Log("PLAYER HAS LOST BY COLLECTING A BUGGED POINT");
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
                     score_saved.saved_score = score;

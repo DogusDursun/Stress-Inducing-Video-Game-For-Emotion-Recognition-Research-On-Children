@@ -10,15 +10,24 @@ public class Collector : MonoBehaviour
     public int drop_counter = 0;
     string obj_string = "";
     public bool is_it_dead = false;
+    private void Start()
+    {
+        Debug.Log(System.DateTime.Now);
+        Debug.Log("FRUIT COLLECTOR GAME SECTION STARTED");
+    }
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "bomb") {
             //target.gameObject.SetActive(false);
             target.tag = "destroy";
+            Debug.Log(System.DateTime.Now);
+            Debug.Log("A frog fell on the ground");
             StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
         } else if (target.tag == "point") {
             target.tag = "destroy";
             if (drop_counter < 10)
             {
+                Debug.Log(System.DateTime.Now);
+                Debug.Log(9 - drop_counter + " lives left");
                 obj_string = "Sprite-0003 (" + drop_counter + ")";
                 GameObject delete_heart = GameObject.Find(obj_string);
                 delete_heart.SetActive(false);
@@ -26,8 +35,10 @@ public class Collector : MonoBehaviour
             drop_counter++;
             if (drop_counter == 10)
             {
-               // GameObject puhlayer = GameObject.Find("pepper");
-               // puhlayer.transform.position = new Vector2(0, 100);
+                Debug.Log(System.DateTime.Now);
+                Debug.Log("PLAYER HAS LOST BY LOSING ALL OF THEIR HEARTS");
+                // GameObject puhlayer = GameObject.Find("pepper");
+                // puhlayer.transform.position = new Vector2(0, 100);
                 // target.gameObject.SetActive(false);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
                 StartCoroutine(RestartGame());
