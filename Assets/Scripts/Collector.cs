@@ -12,22 +12,22 @@ public class Collector : MonoBehaviour
     public bool is_it_dead = false;
     private void Start()
     {
-        Debug.Log(System.DateTime.Now);
-        Debug.Log("FRUIT COLLECTOR GAME SECTION STARTED");
+        Debug.Log(System.DateTime.Now.TimeOfDay);
+        Debug.Log("C1"); // Fruit collector game started
     }
     void OnTriggerEnter2D(Collider2D target) {
         if (target.tag == "bomb") {
             //target.gameObject.SetActive(false);
             target.tag = "destroy";
-            Debug.Log(System.DateTime.Now);
-            Debug.Log("A frog fell on the ground");
+            Debug.Log(System.DateTime.Now.TimeOfDay);
+            Debug.Log("D1"); // Frog fell on the ground
             StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
         } else if (target.tag == "point") {
             target.tag = "destroy";
             if (drop_counter < 10)
             {
-                Debug.Log(System.DateTime.Now);
-                Debug.Log(9 - drop_counter + " lives left");
+                Debug.Log(System.DateTime.Now.TimeOfDay);
+                Debug.Log("D2"); // Point fell on the ground and heart lost
                 obj_string = "Sprite-0003 (" + drop_counter + ")";
                 GameObject delete_heart = GameObject.Find(obj_string);
                 delete_heart.SetActive(false);
@@ -35,8 +35,8 @@ public class Collector : MonoBehaviour
             drop_counter++;
             if (drop_counter == 10)
             {
-                Debug.Log(System.DateTime.Now);
-                Debug.Log("PLAYER HAS LOST BY LOSING ALL OF THEIR HEARTS");
+                Debug.Log(System.DateTime.Now.TimeOfDay);
+                Debug.Log("C3"); // Fruit collector game ended by losing all hearts
                 // GameObject puhlayer = GameObject.Find("pepper");
                 // puhlayer.transform.position = new Vector2(0, 100);
                 // target.gameObject.SetActive(false);

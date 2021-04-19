@@ -13,8 +13,8 @@ public class CameraScript : MonoBehaviour
     string file_name = "";
     void Start()
     {
-        Debug.Log(System.DateTime.Now);
-        Debug.Log("CAMERA SESSION BEGAN");
+        Debug.Log(System.DateTime.Now.TimeOfDay);
+        Debug.Log("F1"); // Camera session began
 
         if (my_camera == null)
         {
@@ -54,8 +54,8 @@ public class CameraScript : MonoBehaviour
    
     public void stop_cam()
     {
-        Debug.Log(System.DateTime.Now);
-        Debug.Log("CAMERA SESSION ENDED");
+        Debug.Log(System.DateTime.Now.TimeOfDay);
+        Debug.Log("F2"); // Camera session ended
         if (my_camera != null)
         {
             display.texture = null;

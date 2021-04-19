@@ -7,7 +7,7 @@ public class LogTaker : MonoBehaviour
     private void Start()
     {
         Debug.Log(System.DateTime.Now);
-        Debug.Log("APPLICATION STARTED");
+        Debug.Log("A1");
         DontDestroyOnLoad(this);
     }
     void OnEnable() 
