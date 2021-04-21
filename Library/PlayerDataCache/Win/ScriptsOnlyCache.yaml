@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BalloonMovement
     - BugScore
+    - CameraScript
     - Collector
     - Endscore
     - LogTaker
@@ -55,6 +56,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
@@ -510,6 +512,63 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14396}
     - Class: 114
       Script: {instanceID: 14416}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/camera.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11278}
+    - Class: 114
+      Script: {instanceID: 11392}
+    - Class: 114
+      Script: {instanceID: 11628}
+    - Class: 114
+      Script: {instanceID: 12296}
+    - Class: 114
+      Script: {instanceID: 13004}
+    - Class: 114
+      Script: {instanceID: 13038}
+    - Class: 114
+      Script: {instanceID: 13356}
+    - Class: 114
+      Script: {instanceID: 13472}
+    - Class: 114
+      Script: {instanceID: 13672}
+    - Class: 114
+      Script: {instanceID: 13776}
+    - Class: 114
+      Script: {instanceID: 14228}
+    - Class: 114
+      Script: {instanceID: 14396}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1381,9 +1440,10 @@ ScriptsOnlyBuild:
   - Assets/Scenes/minigame.unity
   - Assets/Scenes/3rdMenu.unity
   - Assets/Scenes/5Placesfruit.unity
+  - Assets/Scenes/camera.unity
   - Assets/Scenes/4thMenu.unity
   - Assets/Scenes/continuousfruit.unity
   - Assets/Scenes/5thMenu.unity
   - Assets/Scenes/relaxation.unity
   - Assets/Scenes/finishScene.unity
-  playerPath: C:/Users/Win10/Desktop/Dogus-Bitirme-2.exe
+  playerPath: "C:/Users/Win10/Desktop/Bitirme/Do\u011Fu\u015F Dursun-Bitirme/Bitirme-Unity/BuiltGame/Dogus-Bitirme-2.exe"
