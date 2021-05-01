@@ -13,8 +13,9 @@ public class CameraScript : MonoBehaviour
     string file_name = "";
     void Start()
     {
-        Debug.Log(System.DateTime.Now.TimeOfDay);
-        Debug.Log("F1"); // Camera session began
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F1, " + System.DateTime.Now.TimeOfDay + "\n"); // Camera session began
 
         if (my_camera == null)
         {
@@ -54,8 +55,9 @@ public class CameraScript : MonoBehaviour
    
     public void stop_cam()
     {
-        Debug.Log(System.DateTime.Now.TimeOfDay);
-        Debug.Log("F2"); // Camera session ended
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F2, " + System.DateTime.Now.TimeOfDay + "\n"); // Camera session ended
         if (my_camera != null)
         {
             display.texture = null;

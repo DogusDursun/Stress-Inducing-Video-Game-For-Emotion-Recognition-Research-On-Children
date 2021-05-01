@@ -26,8 +26,9 @@ public class BalloonMovement : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(System.DateTime.Now.TimeOfDay);
-        Debug.Log("R1");
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", R1, " + System.DateTime.Now.TimeOfDay + "\n"); //Relaxation Phase starts
         time_bar.maxValue = game_time;
         time_bar.value = game_time;
     }
@@ -42,8 +43,9 @@ public class BalloonMovement : MonoBehaviour
         }
         if ((time_passed >= game_time) && !stopper)
         {
-            Debug.Log(System.DateTime.Now.TimeOfDay);
-            Debug.Log("R2");
+            GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+            PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
+            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", R2, " + System.DateTime.Now.TimeOfDay + "\n"); // Relaxation Phase Ends
             stopper = true;
             StartCoroutine(RestartGame());
         }

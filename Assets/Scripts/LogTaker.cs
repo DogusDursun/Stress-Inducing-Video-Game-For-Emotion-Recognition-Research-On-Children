@@ -6,8 +6,6 @@ public class LogTaker : MonoBehaviour
     string file_name = "";
     private void Start()
     {
-        Debug.Log(System.DateTime.Now);
-        Debug.Log("A1");
         DontDestroyOnLoad(this);
     }
     void OnEnable() 

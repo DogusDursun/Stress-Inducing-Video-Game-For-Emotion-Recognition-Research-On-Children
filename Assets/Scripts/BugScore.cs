@@ -25,6 +25,8 @@ public class BugScore : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D target)
     {
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
         GameObject collectorfound = GameObject.Find("Collector");
         Collector collectorscript = collectorfound.GetComponent<Collector>();
         check_dead = collectorscript.is_it_dead;
@@ -37,8 +39,7 @@ public class BugScore : MonoBehaviour
             if (target.tag == "bomb")
             {
                 target.tag = "destroy";
-                Debug.Log(System.DateTime.Now.TimeOfDay);
-                Debug.Log("C2"); // Player lost by collecting bomb
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C2, " + System.DateTime.Now.TimeOfDay + "\n"); // Player lost by collecting bomb
                 target.tag = "destroy";
                 //transform.position = new Vector2(0, 100);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
@@ -54,8 +55,7 @@ public class BugScore : MonoBehaviour
                 {
                     StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                     score += 500;
-                    Debug.Log(System.DateTime.Now.TimeOfDay);
-                    Debug.Log("E"); // Point successfully collected
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", E, " + System.DateTime.Now.TimeOfDay + "\n"); // Point successfully collected
                     Text.text = score.ToString();
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
@@ -65,8 +65,7 @@ public class BugScore : MonoBehaviour
                     fruit_move.fruit_start_speed += 0.05f;
                 } else
                 {
-                    Debug.Log(System.DateTime.Now.TimeOfDay);
-                    Debug.Log("C4"); // Player lost by collecting a bugged point
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C4, " + System.DateTime.Now.TimeOfDay + "\n"); // Player lost by collecting a bugged point
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
                     score_saved.saved_score = score;

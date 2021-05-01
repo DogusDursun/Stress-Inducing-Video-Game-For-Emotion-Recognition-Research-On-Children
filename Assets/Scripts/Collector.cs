@@ -12,22 +12,23 @@ public class Collector : MonoBehaviour
     public bool is_it_dead = false;
     private void Start()
     {
-        Debug.Log(System.DateTime.Now.TimeOfDay);
-        Debug.Log("C1"); // Fruit collector game started
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C1, " + System.DateTime.Now.TimeOfDay + "\n"); // Fruit collector game started
     }
     void OnTriggerEnter2D(Collider2D target) {
+        GameObject data_to_save = GameObject.Find("PlayerDataSaver");
+        PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
         if (target.tag == "bomb") {
             //target.gameObject.SetActive(false);
             target.tag = "destroy";
-            Debug.Log(System.DateTime.Now.TimeOfDay);
-            Debug.Log("D1"); // Frog fell on the ground
+            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D1, " + System.DateTime.Now.TimeOfDay + "\n"); // Frog fell on the ground
             StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
         } else if (target.tag == "point") {
             target.tag = "destroy";
             if (drop_counter < 10)
             {
-                Debug.Log(System.DateTime.Now.TimeOfDay);
-                Debug.Log("D2"); // Point fell on the ground and heart lost
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D2, " + System.DateTime.Now.TimeOfDay + "\n"); // Point fell on the ground and heart lost
                 obj_string = "Sprite-0003 (" + drop_counter + ")";
                 GameObject delete_heart = GameObject.Find(obj_string);
                 delete_heart.SetActive(false);
@@ -35,11 +36,7 @@ public class Collector : MonoBehaviour
             drop_counter++;
             if (drop_counter == 10)
             {
-                Debug.Log(System.DateTime.Now.TimeOfDay);
-                Debug.Log("C3"); // Fruit collector game ended by losing all hearts
-                // GameObject puhlayer = GameObject.Find("pepper");
-                // puhlayer.transform.position = new Vector2(0, 100);
-                // target.gameObject.SetActive(false);
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C3, " + System.DateTime.Now.TimeOfDay + "\n"); // Fruit collector game ended by losing all hearts
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
                 StartCoroutine(RestartGame());
             }
