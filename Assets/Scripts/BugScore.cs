@@ -13,6 +13,9 @@ public class BugScore : MonoBehaviour
     public bool is_itdead = false;
     public bool check_dead = false;
     public bool bug_time = false;
+    public AudioSource FrogCollect;
+    public AudioSource PointCollect;
+    public AudioSource Lost;
     void Awake()
     {
         Text = GameObject.Find("Text").GetComponent<Text>();
@@ -38,11 +41,13 @@ public class BugScore : MonoBehaviour
         {
             if (target.tag == "bomb")
             {
+                FrogCollect.Play();
                 target.tag = "destroy";
-                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C2, " + System.DateTime.Now.TimeOfDay + "\n"); // Player lost by collecting bomb
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C2, " + System.DateTime.Now.TimeOfDay); // Player lost by collecting bomb
                 target.tag = "destroy";
                 //transform.position = new Vector2(0, 100);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
+                Lost.Play();
                 //target.gameObject.SetActive(false);
                 StartCoroutine(RestartGame());
             }
@@ -53,9 +58,10 @@ public class BugScore : MonoBehaviour
                 //target.gameObject.SetActive(false);
                 if (!bug_time)
                 {
+                    PointCollect.Play();
                     StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                     score += 500;
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", E, " + System.DateTime.Now.TimeOfDay + "\n"); // Point successfully collected
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", E, " + System.DateTime.Now.TimeOfDay); // Point successfully collected
                     Text.text = score.ToString();
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
@@ -65,11 +71,13 @@ public class BugScore : MonoBehaviour
                     fruit_move.fruit_start_speed += 0.05f;
                 } else
                 {
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C4, " + System.DateTime.Now.TimeOfDay + "\n"); // Player lost by collecting a bugged point
+                    FrogCollect.Play();
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C4, " + System.DateTime.Now.TimeOfDay); // Player lost by collecting a bugged point
                     GameObject score_to_save = GameObject.Find("scoreobject");
                     ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
                     score_saved.saved_score = score;
                     StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
+                    Lost.Play();
                     StartCoroutine(RestartGame());
                 }
             }

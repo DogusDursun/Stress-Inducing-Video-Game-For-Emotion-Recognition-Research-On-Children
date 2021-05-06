@@ -15,10 +15,17 @@ public class minigame : MonoBehaviour
     private float first_flag = 1f;
     private float second_flag = 1f;
     private float third_flag = 1f;
-    private float game_time = 60f;
+    private float game_time = 45f;
     private float time_passed = 0f;
     public Slider time_bar;
     private bool stopper = false;
+    public AudioSource FirstStop;
+    public AudioSource SecondStop;
+    public AudioSource ThirdStop;
+    public AudioSource Timeout;
+    public AudioSource FailedStop;
+    public AudioSource LittleTime;
+    bool LittleTimeStart = true;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +36,7 @@ public class minigame : MonoBehaviour
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M1, " + System.DateTime.Now.TimeOfDay + "\n"); // game start
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M1, " + System.DateTime.Now.TimeOfDay); // game start
         time_bar.maxValue = game_time;
         time_bar.value = game_time;
     }
@@ -40,13 +47,20 @@ public class minigame : MonoBehaviour
         if (!stopper)
         {
             time_bar.value = game_time - time_passed;
+            if (LittleTimeStart && (time_bar.value <= 10))
+            {
+                LittleTime.Play();
+                LittleTimeStart = false;
+            }
         }
         if ((time_passed >= game_time) && !stopper)
         {
             stopper = true;
             GameObject data_to_save = GameObject.Find("PlayerDataSaver");
             PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M3, " + System.DateTime.Now.TimeOfDay + "\n"); // Lose by timeout
+            LittleTime.Stop();
+            Timeout.Play();
+            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M3, " + System.DateTime.Now.TimeOfDay); // Lose by timeout
             StartCoroutine(RestartGame());
         }
         GameObject first = GameObject.Find("player1");
@@ -68,14 +82,16 @@ public class minigame : MonoBehaviour
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay + "\n"); //Succesful stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay); //Succesful stopping
+                    FirstStop.Play();
                     first_won = true;
                     first_flag = 1f;
                 } else
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay + "\n"); //Fail at stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay); //Fail at stopping
+                    FailedStop.Play();
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     first_flag = 1f;
                 }
@@ -97,7 +113,8 @@ public class minigame : MonoBehaviour
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay + "\n"); //Succesful stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay); //Succesful stopping
+                    SecondStop.Play();
                     second_won = true;
                     second_flag = 1f;
                 }
@@ -105,7 +122,8 @@ public class minigame : MonoBehaviour
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay + "\n"); //Fail at stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay); //Fail at stopping
+                    FailedStop.Play();
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     second.transform.position = new Vector3(-7.5f, 0.713f, 0);
                     second_flag = 1f;
@@ -129,8 +147,9 @@ public class minigame : MonoBehaviour
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay + "\n"); //Succesful stopping
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M2, " + System.DateTime.Now.TimeOfDay + "\n"); //Win
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N1, " + System.DateTime.Now.TimeOfDay); //Succesful stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", M2, " + System.DateTime.Now.TimeOfDay); //Win
+                    ThirdStop.Play();
                     game_won = true;
                     third_flag = 1f;
                 }
@@ -138,7 +157,8 @@ public class minigame : MonoBehaviour
                 {
                     GameObject data_to_save = GameObject.Find("PlayerDataSaver");
                     PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay + "\n"); //Fail at stopping
+                    Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", N2, " + System.DateTime.Now.TimeOfDay); //Fail at stopping
+                    FailedStop.Play();
                     first.transform.position = new Vector3(-7.5f, 3.72f, 0);
                     second.transform.position = new Vector3(-7.5f, 0.713f, 0);
                     third.transform.position = new Vector3(-7.5f, -2.28f, 0);

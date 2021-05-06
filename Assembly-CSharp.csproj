@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AudioSave.cs" />
+    <Compile Include="Assets\Scripts\AudioVolume.cs" />
     <Compile Include="Assets\Scripts\BalloonMovement.cs" />
     <Compile Include="Assets\Scripts\BugScore.cs" />
     <Compile Include="Assets\Scripts\CameraScript.cs" />

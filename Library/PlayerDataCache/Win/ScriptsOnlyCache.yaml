@@ -1,6 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioSave
+    - AudioVolume
     - BalloonMovement
     - BugScore
     - CameraScript
@@ -84,6 +86,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -108,6 +114,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -149,6 +157,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -185,6 +197,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14398}
     - Class: 114
       Script: {instanceID: 14458}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -220,6 +234,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -246,6 +264,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -279,6 +299,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -305,6 +329,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -344,6 +370,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -378,6 +408,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13974}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -415,6 +447,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -447,6 +483,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -483,6 +521,10 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -536,6 +578,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14398}
     - Class: 114
       Script: {instanceID: 14418}
+    - Class: 114
+      Script: {instanceID: 27938}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -567,6 +613,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -593,6 +643,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -632,6 +684,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -666,6 +722,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13974}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -701,6 +759,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -727,6 +789,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14230}
     - Class: 114
       Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 30060}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -757,6 +821,10 @@ ScriptsOnlyBuild:
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -858,7 +926,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 612bfdec219d6049d6c380184731823d
+      Hash: 2cb68c2bb05a39e1fc91b206b1253bf6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: minigame
@@ -888,7 +956,7 @@ ScriptsOnlyBuild:
     className: menupeppermovement
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: fa7c7698b23028828441f34bc43e904e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MenuScript
@@ -960,7 +1028,7 @@ ScriptsOnlyBuild:
     className: SpriteShapeController
   - hash:
       serializedVersion: 2
-      Hash: c0f2f097a82debda36fb43c43dfcef4f
+      Hash: 4bf942c657e9b3f78f6744cdec842054
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BugScore
@@ -1152,7 +1220,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: 1ef5f422566c49e39483adf6728eebc9
+      Hash: 54495c1e8ef370b171150fb3087a9b4c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Score
@@ -1326,7 +1394,7 @@ ScriptsOnlyBuild:
     className: fruitmovement
   - hash:
       serializedVersion: 2
-      Hash: 23c32a81508ed0d8801303147278cc63
+      Hash: 66e9a39652ab916a5fad95a037307201
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Collector
@@ -1462,6 +1530,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: bec9ed15d6dda7b1eba4ab613b777188
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioSave
+  - hash:
+      serializedVersion: 2
+      Hash: 53f700dba614acb6d4d2963b3a5b9dd7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioVolume
   platform: 5
   scenePathNames:
   - Assets/Scenes/Menu.unity

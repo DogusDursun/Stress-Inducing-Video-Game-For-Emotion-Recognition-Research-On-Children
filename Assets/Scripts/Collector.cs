@@ -10,11 +10,14 @@ public class Collector : MonoBehaviour
     public int drop_counter = 0;
     string obj_string = "";
     public bool is_it_dead = false;
+    public AudioSource FrogFall;
+    public AudioSource PointFall;
+    public AudioSource Lost;
     private void Start()
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C1, " + System.DateTime.Now.TimeOfDay + "\n"); // Fruit collector game started
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C1, " + System.DateTime.Now.TimeOfDay); // Fruit collector game started
     }
     void OnTriggerEnter2D(Collider2D target) {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
@@ -22,13 +25,15 @@ public class Collector : MonoBehaviour
         if (target.tag == "bomb") {
             //target.gameObject.SetActive(false);
             target.tag = "destroy";
-            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D1, " + System.DateTime.Now.TimeOfDay + "\n"); // Frog fell on the ground
+            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D1, " + System.DateTime.Now.TimeOfDay); // Frog fell on the ground
+            FrogFall.Play();
             StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
         } else if (target.tag == "point") {
             target.tag = "destroy";
+            PointFall.Play();
             if (drop_counter < 10)
             {
-                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D2, " + System.DateTime.Now.TimeOfDay + "\n"); // Point fell on the ground and heart lost
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", D2, " + System.DateTime.Now.TimeOfDay); // Point fell on the ground and heart lost
                 obj_string = "Sprite-0003 (" + drop_counter + ")";
                 GameObject delete_heart = GameObject.Find(obj_string);
                 delete_heart.SetActive(false);
@@ -36,7 +41,8 @@ public class Collector : MonoBehaviour
             drop_counter++;
             if (drop_counter == 10)
             {
-                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C3, " + System.DateTime.Now.TimeOfDay + "\n"); // Fruit collector game ended by losing all hearts
+                Lost.Play();
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C3, " + System.DateTime.Now.TimeOfDay); // Fruit collector game ended by losing all hearts
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
                 StartCoroutine(RestartGame());
             }

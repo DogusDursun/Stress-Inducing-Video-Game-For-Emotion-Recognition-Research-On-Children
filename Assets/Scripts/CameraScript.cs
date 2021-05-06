@@ -15,7 +15,7 @@ public class CameraScript : MonoBehaviour
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F1, " + System.DateTime.Now.TimeOfDay + "\n"); // Camera session began
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F1, " + System.DateTime.Now.TimeOfDay); // Camera session began
 
         if (my_camera == null)
         {
@@ -57,7 +57,7 @@ public class CameraScript : MonoBehaviour
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F2, " + System.DateTime.Now.TimeOfDay + "\n"); // Camera session ended
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F2, " + System.DateTime.Now.TimeOfDay); // Camera session ended
         if (my_camera != null)
         {
             display.texture = null;

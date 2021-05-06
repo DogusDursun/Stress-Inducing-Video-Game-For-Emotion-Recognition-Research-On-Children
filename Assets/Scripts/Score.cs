@@ -12,6 +12,9 @@ public class Score : MonoBehaviour
     public float speed = 1f;
     public bool is_itdead = false;
     public bool check_dead = false;
+    public AudioSource FrogCollect;
+    public AudioSource PointCollect;
+    public AudioSource Lost;
     void Awake()
     {
         Text = GameObject.Find("Text").GetComponent<Text> ();
@@ -32,22 +35,25 @@ public class Score : MonoBehaviour
         {
             if (target.tag == "bomb")
             {
-                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C2, " + System.DateTime.Now.TimeOfDay + "\n"); // Player lost by collecting bomb
+                FrogCollect.Play();
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", C2, " + System.DateTime.Now.TimeOfDay); // Player lost by collecting bomb
                 target.tag = "destroy";
                 //transform.position = new Vector2(0, 100);
                 StartCoroutine(RemoveAfterSeconds(0.5f, target.gameObject));
+                Lost.Play();
                 //target.gameObject.SetActive(false);
                 StartCoroutine(RestartGame());
             }
 
             if (target.tag == "point")
             {
+                PointCollect.Play();
                 target.tag = "destroy";
                 //target.gameObject.SetActive(false);
                 StartCoroutine(RemoveAfterSeconds(0.4f, target.gameObject));
                 score += 500;
                 Text.text = score.ToString();
-                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", E, " + System.DateTime.Now.TimeOfDay + "\n");  // Point successfully collected
+                Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", E, " + System.DateTime.Now.TimeOfDay);  // Point successfully collected
                 GameObject score_to_save = GameObject.Find("scoreobject");
                 ScoreSaver score_saved = score_to_save.GetComponent<ScoreSaver>();
                 score_saved.saved_score = score;

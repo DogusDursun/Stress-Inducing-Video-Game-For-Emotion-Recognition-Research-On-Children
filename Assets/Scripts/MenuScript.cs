@@ -12,6 +12,7 @@ public class MenuScript : MonoBehaviour
     private string extra_info;
     private string player_age;
     private string player_gender;
+    public AudioSource Click;
     // Start is called before the first frame update
 
     public void PlayGame ()
@@ -22,7 +23,7 @@ public class MenuScript : MonoBehaviour
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", A2, " + System.DateTime.Now.TimeOfDay + "\n");
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", A2, " + System.DateTime.Now.TimeOfDay);
         Application.Quit();
     }
     public void SetFullscreen (bool is_fs)
@@ -36,7 +37,7 @@ public class MenuScript : MonoBehaviour
 
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", B, " + System.DateTime.Now.TimeOfDay + "\n");
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", B, " + System.DateTime.Now.TimeOfDay);
         Screen.fullScreen = is_fs;
     }
     public void PrintToLog ()
@@ -44,14 +45,14 @@ public class MenuScript : MonoBehaviour
         string button_name = EventSystem.current.currentSelectedGameObject.name;
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", " + button_name + ", " + System.DateTime.Now.TimeOfDay + "\n");
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", " + button_name + ", " + System.DateTime.Now.TimeOfDay);
 
     }
     public void NextEmoji ()
     {
         GameObject data_to_save = GameObject.Find("PlayerDataSaver");
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
-        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", "  + p_d_s.gender + ", " + p_d_s.extra_information + ", F3, " + System.DateTime.Now.TimeOfDay + "\n");
+        Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", "  + p_d_s.gender + ", " + p_d_s.extra_information + ", F3, " + System.DateTime.Now.TimeOfDay);
     }
     public void SavePlayerData ()
     {
@@ -88,6 +89,11 @@ public class MenuScript : MonoBehaviour
             player_data_script.gender = player_gender;
         }
 
-        Debug.Log(player_data_script.player_name + ", " + player_data_script.age + ", " + player_data_script.gender + ", " + player_data_script.extra_information + ", A1, " + System.DateTime.Now + "\n"); //Start game after taking player data
+        Debug.Log(player_data_script.player_name + ", " + player_data_script.age + ", " + player_data_script.gender + ", " + player_data_script.extra_information + ", A1, " + System.DateTime.Now); //Start game after taking player data
+    }
+
+    public void PlayClick()
+    {
+        Click.Play();
     }
 }
