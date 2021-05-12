@@ -10,7 +10,9 @@ public class MenuScript : MonoBehaviour
 {
     private string playername;
     private string extra_info;
-    private string player_age;
+    private string player_by; //birth year
+    private string player_bm; //birth month
+    private string player_bd; //birth day
     private string player_gender;
     public AudioSource Click;
     // Start is called before the first frame update
@@ -75,12 +77,28 @@ public class MenuScript : MonoBehaviour
         }
         player_data_script.extra_information = extra_info;
 
-        TMP_Dropdown Age_Dd = GameObject.Find("Age").GetComponent<TMP_Dropdown>();
-        player_age = Age_Dd.options[Age_Dd.value].text;
-        if (player_age != "Yaş")
+        TMP_Dropdown Age_BD = GameObject.Find("BDay").GetComponent<TMP_Dropdown>();
+        player_bd = Age_BD.options[Age_BD.value].text;
+        if (player_bd != "Gün")
         {
-            player_data_script.age = player_age;
+            player_data_script.b_day = player_bd;
         }
+
+        TMP_Dropdown Age_BM = GameObject.Find("BMonth").GetComponent<TMP_Dropdown>();
+        player_bm = Age_BM.options[Age_BM.value].text;
+        if (player_bm != "Ay")
+        {
+            player_data_script.b_month = player_bm;
+        }
+
+        TMP_Dropdown Age_BY = GameObject.Find("BYear").GetComponent<TMP_Dropdown>();
+        player_by = Age_BY.options[Age_BY.value].text;
+        if (player_by != "Yıl")
+        {
+            player_data_script.b_year = player_by;
+        }
+
+        player_data_script.age_found();
         
         TMP_Dropdown Gender_Dd = GameObject.Find("Gender").GetComponent<TMP_Dropdown>();
         player_gender = Gender_Dd.options[Gender_Dd.value].text;

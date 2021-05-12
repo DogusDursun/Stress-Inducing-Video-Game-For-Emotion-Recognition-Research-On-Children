@@ -20,6 +20,8 @@ public class CameraScript : MonoBehaviour
         if (my_camera == null)
         {
             my_camera = new WebCamTexture();
+            my_camera.requestedWidth = 352;
+            my_camera.requestedHeight = 288;
         }
 
         //GetComponent<Renderer>().material.mainTexture = my_camera;
