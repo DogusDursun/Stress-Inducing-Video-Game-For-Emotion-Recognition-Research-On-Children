@@ -14,14 +14,14 @@ public class FileUpload : MonoBehaviour
     {
         MailMessage mail = new MailMessage();
 
-        mail.From = new MailAddress("DogusBitirme@gmail.com");
-        mail.To.Add("DogusBitirme@gmail.com");
+        mail.From = new MailAddress("_GMAILNAMEYOUWILLSENDFROM_@gmail.com");
+        mail.To.Add("_GMAILNAMEYOUWILLBESENDINGTO_@gmail.com");
         mail.Subject = "Bitirme Loglari";
         mail.Body = "Here are the logs and frames";
 
         SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
         smtpServer.Port = 587;
-        smtpServer.Credentials = new System.Net.NetworkCredential("DogusBitirme@gmail.com", "g433qfwe4343q3tg") as ICredentialsByHost;
+        smtpServer.Credentials = new System.Net.NetworkCredential("_GMAILNAMEYOUWILLSENDFROM_@gmail.com", "_GMAILPASSWORDYOULLSENDFROM_") as ICredentialsByHost;
         smtpServer.EnableSsl = true;
         ServicePointManager.ServerCertificateValidationCallback =
             delegate (object s, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
