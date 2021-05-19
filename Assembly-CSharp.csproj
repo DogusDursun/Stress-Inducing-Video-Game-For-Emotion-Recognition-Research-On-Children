@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Collector.cs" />
     <Compile Include="Assets\Scripts\Endscore.cs" />
+    <Compile Include="Assets\Scripts\FileUpload.cs" />
     <Compile Include="Assets\Scripts\LogTaker.cs" />
     <Compile Include="Assets\Scripts\MenuScript.cs" />
     <Compile Include="Assets\Scripts\PlayerBounds.cs" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour
 {
@@ -17,23 +18,31 @@ public class CameraScript : MonoBehaviour
         PlayerData p_d_s = data_to_save.GetComponent<PlayerData>();
         Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F1, " + System.DateTime.Now.TimeOfDay); // Camera session began
 
-        if (my_camera == null)
+        if (WebCamTexture.devices.Length < 1) 
         {
-            my_camera = new WebCamTexture();
-            my_camera.requestedWidth = 352;
-            my_camera.requestedHeight = 288;
-        }
-
-        //GetComponent<Renderer>().material.mainTexture = my_camera;
-
-        display.texture = my_camera;
-
-        if (!my_camera.isPlaying)
+            Debug.Log(p_d_s.player_name + ", " + p_d_s.age + ", " + p_d_s.gender + ", " + p_d_s.extra_information + ", F4, " + System.DateTime.Now.TimeOfDay); // No attached camera
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        } else
         {
-            my_camera.Play();
-        }
+            if (my_camera == null)
+            {
+                my_camera = new WebCamTexture();
+                my_camera.requestedWidth = 352;
+                my_camera.requestedHeight = 288;
+            }
 
-        InvokeRepeating("TakeFrame", 2f, 1f);
+            //GetComponent<Renderer>().material.mainTexture = my_camera;
+
+            display.texture = my_camera;
+
+            if (!my_camera.isPlaying)
+            {
+                my_camera.Play();
+            }
+
+            InvokeRepeating("TakeFrame", 2f, 1f);
+        }
+   
     }
     void TakeFrame()  
     {
