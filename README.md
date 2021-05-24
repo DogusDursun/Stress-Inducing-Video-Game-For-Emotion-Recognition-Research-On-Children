@@ -8,15 +8,22 @@ and change the mail names and passwords accordingly with which e-mail you want t
 Credits:
 
 SunnyLand asset is used in the making of the graphical contents of this game, created by Luis Zuno @ansimuz
+
 https://www.patreon.com/ansimuz
+
 https://ansimuz.itch.io/
+
 https://twitter.com/ansimuz
 
 
 Audio effects are taken from the website of Kenney Vlaugels (Kenney.nl)
+
 Donate:   http://support.kenney.nl
+
 Request:  http://request.kenney.nl
+
 Follow on Twitter for updates:
+
 @KenneyNL
 
 
